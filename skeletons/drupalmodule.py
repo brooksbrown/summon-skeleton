@@ -90,11 +90,11 @@ class ${migrate_class_name} extends Migration {
 
 
 def create():
-		module_name = raw_input('enter module name: ')
+		module_name = raw_input('Enter module name: ')
 		if module_name == '':
 			module_name = 'temporary'
 
-		module_type = raw_input('module type (basic, migrate): ')
+		module_type = raw_input('Module type (basic, migrate): ')
 		if module_type != 'basic' and module_type != 'migrate':
 			module_type = 'basic'
 
@@ -123,9 +123,9 @@ def create():
 				migrate_type = 'csv-node'
 			
 			if migrate_type == 'csv-node':
-				migrate_machine_name = raw_input('migrate machine name: ')
-				migrate_class_name = raw_input('migrate class name: ')
-				migrate_content_type = raw_input('content type: ')
+				migrate_machine_name = raw_input('Migrate machine name: ')
+				migrate_class_name = raw_input('Migrate class name: ')
+				migrate_content_type = raw_input('Content type: ')
 				
 				d = {'module_name' : module_name,
 					 'migrate_machine_name' : migrate_machine_name,
