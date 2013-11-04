@@ -9,8 +9,6 @@ import skellib
 skel_dir = 'skeletons'
 
 
-
-
 if __name__ == '__main__':
 	
 	skeletons = skellib.loadSkeletons(os.path.join(os.path.dirname(__file__), skel_dir))
