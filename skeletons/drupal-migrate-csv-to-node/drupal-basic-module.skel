@@ -1,0 +1,17 @@
+[settings]
+name: migrate csv to node
+tag: drupal modules
+
+[module_machine_name]
+prompt: Enter the module machine name
+
+[migrate_class_name]
+prompt: Enter the migrate class name
+
+[migrate_machine_name]
+prompt: Enter the migrate machine name
+
+[migrate_content_type]
+prompt: Enter the destination node type
+
+

@@ -1,0 +1,62 @@
+<?php
+
+function ${module_machine_name}_migrate_api() {
+	return array(
+		'api' => 2,
+		'migrations' => array(
+			'${migrate_machine_name}' => array('class_name' => '${migrate_class_name}'),
+		),
+	);
+}
+
+class ${migrate_class_name} extends Migration {
+	public function __construct($arguments) {
+		parent::__construct();
+		$csv_filepath = '';
+	
+		$this->description = t('');
+
+		$csv_columns = array();
+
+		$this->source = new MigrateSourceCSV($csv_filepath, $columns, array('header_rows' => 1, 'embedded_newlines' => 1));
+
+		$this->destination = new MigrateDestinationNode('${migrate_content_type}');
+		
+		$this-> map = new MigrateSQLMap($this->machineName,
+			array(
+				'csv_id' => array(
+					'type' => 'int',
+					'unsigned' => TRUE,
+					'not null' => TRUE,
+					'alias' => 'import',
+				),
+			),
+			MigrateDestinationNode::getKeySchema()
+		);
+
+		$this->addSimpleMappings(array(
+			'title',
+		));
+
+	}
+
+	public function prepareRow($row) {
+	  // Always include this fragment at the beginning of every prepareRow()
+	  // implementation, so parent classes can ignore rows.
+		if (parent::prepareRow($row) === FALSE) {
+			return FALSE;
+		}
+
+		#title required
+		if ($row->title	== '') {
+			return FALSE; 
+		}
+		
+		return TRUE;
+	}
+
+	function prepare(&$row) {
+	}
+
+}
+

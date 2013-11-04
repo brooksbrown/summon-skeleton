@@ -1,0 +1,8 @@
+[settings]
+name: skeleton
+tag: summon skeleton
+
+[skeleton_name]
+prompt: Enter the skeleton name
+
+

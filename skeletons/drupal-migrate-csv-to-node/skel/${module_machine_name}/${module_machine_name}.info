@@ -1,0 +1,4 @@
+name = ${module_machine_name}
+core = 7.x
+package = other
+dependencies[] = migrate

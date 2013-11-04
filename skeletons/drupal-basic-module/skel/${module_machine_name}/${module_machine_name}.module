@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Implements hook_permission
+ *
+ */
+function ${module_machine_name}_permission() {
+  return array(
+    'access random' => array(
+      'title' => t(''),
+      'description' => t(''),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_menu()
+ *
+ */
+function ${module_machine_name}_menu() {
+  $items = array();
+  
+  return $items;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+[settings]
+name: drupal-basic-module
+tag: drupal modules
+
+[module_machine_name]
+prompt: Enter the module machine name
+
